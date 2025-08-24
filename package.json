@@ -1,0 +1,49 @@
+{
+  "name": "dataglimpse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "copy:wasm": "shx mkdir -p public/wasm public/duckdb && shx cp -f node_modules/sql.js/dist/sql-wasm.wasm public/wasm/ && shx cp -f node_modules/@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm public/duckdb/ && shx cp -f node_modules/@duckdb/duckdb-wasm/dist/duckdb-browser-mvp.worker.js public/duckdb/",
+    "build": "npm run copy:wasm && next build",
+    "start": "next start",
+    "start:static": "npx serve out -p 4173",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.18.6",
+    "@codemirror/lang-sql": "^6.9.1",
+    "@duckdb/duckdb-wasm": "^1.29.1-dev132.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
+    "@tanstack/react-virtual": "^3.13.12",
+    "@uiw/react-codemirror": "^4.24.2",
+    "framer-motion": "^12.23.12",
+    "html-to-image": "^1.11.13",
+    "next": "15.4.6",
+    "papaparse": "^5.5.3",
+    "react": "19.1.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.1.0",
+    "react-dropzone": "^14.3.8",
+    "reactflow": "^11.11.4",
+    "recharts": "^3.1.2",
+    "sql-formatter": "^15.6.6",
+    "sql.js": "^1.13.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^19",
+    "@types/react-countup": "^4.3.0",
+    "@types/react-dom": "^19",
+    "@types/sql.js": "^1.4.9",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "shx": "^0.4.0",
+    "typescript": "^5"
+  }
+}
